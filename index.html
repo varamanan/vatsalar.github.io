@@ -34,12 +34,22 @@
       margin: 4px 0 20px;
       color: var(--muted);
     }
-    header img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 24px;
       margin-bottom: 20px;
+    }
+    .intro img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .intro p { margin: 4px 0 0; }
+    @media (max-width: 560px) {
+      .intro { flex-direction: column; align-items: flex-start; }
     }
     nav {
       display: flex;
@@ -86,9 +96,13 @@
 <body>
 
   <header>
-    <h1>Vatsala Ramanan</h1>
-    <p>PhD Student &middot; Department of Public Policy &middot; The University of North Carolina at Chapel Hill</p>
-    <img src="picture.jpg" alt="Photo of Vatsala Ramanan" width="400">
+    <div class="intro">
+      <img src="picture.jpg" alt="Photo of Vatsala Ramanan">
+      <div>
+        <h1>Vatsala Ramanan</h1>
+        <p>PhD Student &middot; Department of Public Policy &middot; The University of North Carolina at Chapel Hill</p>
+      </div>
+    </div>
     <nav>
       <button class="active" data-tab="home">Home</button>
       <button data-tab="research">Research</button>
